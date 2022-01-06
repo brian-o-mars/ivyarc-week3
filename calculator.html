@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form action="calculator">
+        <label for="num1">Number 1</label>
+        <input type="text" name="num1" id="num1">
+        <br>
+        <label for="num2">Number 2</label>
+        <input type="text" name="num2" id="num2">
+        <br>
+        <label for="num3">Number 3</label>
+        <input type="text" name="num3" id="num3">
+        <br>
+        <label for="result">result</label>
+        <input type="text" name="result" id="result">
+        <br>
+ 
+        <select id="operator">
+            <option value="mul">Multiply</option>
+            <option value="div">Divide</option>
+            <option value="add">Add</option>
+            <option value="sub">Subtract</option>
+            <option value="sq">Squar</option>
+            <option value="sqrt">Squre root</option>
+        </select>
+        <input type="button" value="calculate" onclick="execute()">
+    </form>
+ 
+    <div id="resultss"></div>
+ 
+    <script>
+        function execute () {
+            let a = parseInt(document.querySelector("#num1").value);
+            let b = parseInt(document.querySelector("#num2").value);
+            let c = parseInt(document.querySelector("#num3").value);
+ 
+            let opp = document.querySelector("#operator").value;
+            let calculate;
+ 
+ 
+            if (isNaN(a && b && c) == false) {
+                if (opp == "mul"){
+                    calculate = a * b * c;
+                } else if (opp == "div"){
+                    calculate = a / b / c;
+                } else if (opp == "add"){
+                    calculate = a + b + c;
+                } else if (opp == "sub"){
+                    calculate = a - b - c;
+                }
+            } else if ((isNaN(a && b) == false) && isNaN(c)) {
+                if (opp == "mul"){
+                    calculate = a * b;
+                } else if (opp == "div"){
+                    calculate = a / b;
+                } else if (opp == "add"){
+                    calculate = a + b;
+                } else if (opp == "sub"){
+                    calculate = a - b;
+                } 
+            } else if ((isNaN(a) == false) && isNaN(c && b)) {
+                if (opp == "sq"){
+                    calculate = a * a;
+                } else if (opp == "sqrt"){
+                    calculate = Math.sqrt(a);
+                }
+            }
+           
+            document.querySelector("#result").value = calculate;
+        }
+       
+    </script>
+</body>
+</html>

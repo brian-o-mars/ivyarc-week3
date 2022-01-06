@@ -1,0 +1,82 @@
+/* Aligning content */
+body {
+    max-width: max-content;
+    margin: auto;
+    background-color: rgb(195, 216, 209);
+
+}
+
+.container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Styling loadFile class */
+.loadFile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.4rem;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* Making input button disapper and using the label content for styling */
+input[type="file"] {
+    display: none;
+}
+
+/* Styling label content */
+.fileLabel {
+    background: rgb(247, 36, 36);
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 3em;
+    padding: .5em;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90px;
+    height: 18px;
+}
+
+.fileLabel:hover {
+    color: rgb(247, 36, 36);
+    background: white;
+    border: 2px solid rgb(247, 36, 36);
+    transition: .2s;
+}
+
+/* Styling buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.4rem;
+    width: 30%;
+    margin-top: 20px;
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+button {
+    width: 70px;
+    height: 20px;
+    border: none;
+    background: rgb(247, 36, 36);
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3em;
+    cursor: pointer;
+}
+
+button:hover {
+    color: rgb(247, 36, 36);
+    background: white;
+    border: 2px solid rgb(247, 36, 36);
+    transition: .2s;
+}

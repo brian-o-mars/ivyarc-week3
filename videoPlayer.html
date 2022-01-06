@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viddeo Player</title>
+    <link rel="stylesheet" href="vidPlayer.css">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Choosing the video file to play from local storage -->
+        <div class="loadFile">
+            <input type="file" id="file" accept="video/*"/>
+            <!-- Used a label so I can remove the input button and use label for styling -->
+            <label for="file" class="fileLabel">Choose video</label>
+            <video controls></video>
+        </div>
+
+        <!-- Buttons for video controls -->
+        <div class="controls">
+            <div class="buttons">
+                <button id="play">Play</button>
+                <button id="pause">Pause</button>
+                <button id="skip-back">Skip < </button>
+                <button id="skip-for">Skip ></button>
+                <button id="stop">Stop</button>
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        // Assigning variables to the chosen video file and video player
+ 
+        let vidFile = document.querySelector('input');
+        let video = document.querySelector('video');
+
+        // Assigning variables to the video player buttons
+        let btnPlay = document.querySelector('#play');
+        let btnPause = document.querySelector('#pause');
+        let btnSkipBack = document.querySelector('#skip-back');
+        let btnSkipFor = document.querySelector('#skip-for');
+        let btnStop = document.querySelector('#stop');
+
+        //Script to choose video file and load the video to video player
+        vidFile.addEventListener('change', function() {
+        let url = URL.createObjectURL(vidFile.files[0]);
+        video.src = url;
+        video.load();
+        });
+
+        //Script to utilise buttons for various actions
+        btnPlay.onclick = function(){
+            video.play();
+        }
+        btnPause.onclick = function(){
+            video.pause();
+        }
+        btnSkipBack.onclick = function(){
+            video.currentTime -= 5;
+        }
+        btnSkipFor.onclick = function(){
+            video.currentTime += 5;
+        }
+        btnStop.onclick = function(){
+            video.currentTime = 0;
+            video.pause();
+        }
+        
+
+    </script>
+</body>
+</html>
